@@ -1,5 +1,12 @@
 <template>
-  <div></div>
+  <!-- Display chart if data has been loaded sucessfully -->
+  <div v-if="series" class="linechart">
+    <apexcharts type="line" :options="chartOptions" :series="series" />
+  </div>
+  <!-- Else display loading spinner. -->
+  <div v-else class="d-flex justify-content-center mb-3 loading">
+    <b-spinner />
+  </div>
 </template>
 
 <script>
@@ -63,7 +70,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
