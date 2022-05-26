@@ -26,6 +26,23 @@ export default {
         password: process.env.VUE_APP_PASS
       }
     })
+    // Map response data to object variable.
+      .then(
+        (response) => {
+          this.chartOptions.xaxis.categories = response.data._embedded.dataRecordList.map(data => data.time)
+          this.series = [
+            {
+              name: 'Temperature',
+              data: response.data._embedded.dataRecordList.map(data => data.temperature)
+            },
+            {
+              name: 'Humidity',
+              data: response.data._embedded.dataRecordList.map(data => data.humidity)
+            }
+          ]
+        }
+      )
+      .catch((error) => console.error(error.message))
   },
   data () {
     return {
