@@ -1,5 +1,29 @@
 <template>
-  <div></div>
+  <!-- Main page layout -->
+  <div id="app">
+    <b-container class="bv-row">
+      <b-row class="header text-center">
+        <b-col></b-col>
+        <b-col cols="8">
+        </b-col>
+        <b-col></b-col>
+      </b-row>
+      <b-row class="text-center">
+        <b-col></b-col>
+        <b-col cols="8">
+          <div class="chartbox">
+          </div>
+        </b-col>
+        <b-col></b-col>
+      </b-row>
+      <b-row class="footer text-center">
+        <b-col></b-col>
+        <b-col cols="8">
+        </b-col>
+        <b-col></b-col>
+      </b-row>
+    </b-container>
+  </div>
 </template>
 
 <script>
