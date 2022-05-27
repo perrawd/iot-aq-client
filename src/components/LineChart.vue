@@ -36,7 +36,7 @@ export default {
     // Map response data to object variable.
       .then(
         (response) => {
-          this.chartOptions.xaxis.categories = response.data._embedded.dataRecordList.map(data => data.time)
+          this.chartOptions.xaxis.categories = response.data._embedded.dataRecordList.map(data => new Date(data.time).toLocaleString('sv-SE'))
           this.series = [
             {
               name: 'Temperature',
