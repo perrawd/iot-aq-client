@@ -1,5 +1,17 @@
 <template>
   <div>
+    <h4>Current </h4>
+    <b-row>
+      <b-col></b-col>
+      <b-col>
+        <b-card :title="currentTemp" sub-title="🌡"></b-card>
+      </b-col>
+      <b-col>
+        <b-card :title="currentHumidity" sub-title="💧"></b-card>
+      </b-col>
+      <b-col></b-col>
+    </b-row>
+    <h4>Historical data</h4>
     <!-- Display chart if data has been loaded sucessfully -->
     <div v-if="series" class="linechart">
       <apexcharts type="line" :options="chartOptions" :series="series" />
