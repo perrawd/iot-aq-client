@@ -1,16 +1,18 @@
 <template>
   <div>
-    <h4>Current </h4>
+    <h4>Current</h4>
     <b-row>
       <b-col></b-col>
       <b-col>
-        <b-card :title="currentTemp" sub-title="🌡"></b-card>
+        <b-card :title="currentTemp" sub-title="🌡 Temperature"></b-card>
       </b-col>
       <b-col>
-        <b-card :title="currentHumidity" sub-title="💧"></b-card>
+        <b-card :title="currentHumidity" sub-title="💧 Humidity"></b-card>
       </b-col>
       <b-col></b-col>
     </b-row>
+    <p>Current measurement gathered on: {{currentTime}}</p>
+    <hr>
     <h4>Historical data</h4>
     <!-- Display chart if data has been loaded sucessfully -->
     <div v-if="series" class="linechart">
@@ -54,7 +56,7 @@ export default {
           this.chartOptions.xaxis.categories = response.data._embedded.dataRecordList.map(data => new Date(data.time).toLocaleString('sv-SE'))
           this.currentTemp = this.results[this.results.length - 1].temperature.toString()
           this.currentHumidity = this.results[this.results.length - 1].humidity.toString()
-          this.currentTime = this.results[this.results.length - 1].time.toString()
+          this.currentTime = new Date(this.results[this.results.length - 1].time.toString()).toLocaleString('sv-SE')
 
           this.series = [
             {
