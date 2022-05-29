@@ -5,7 +5,20 @@
       <b-row class="header text-center">
         <b-col></b-col>
         <b-col cols="8">
-          <h2>#IOT Sensor 🌡</h2>
+          <h2>Temperature and Humidity Sensor</h2>
+        </b-col>
+        <b-col></b-col>
+      </b-row>
+      <b-row class="text-center">
+        <b-col></b-col>
+        <b-col cols="8">
+          <div class="descriptiontext">
+            <p>
+              Temperature and humidity data is collected and sent from a DMT11 sensor connected to a lopy4 microcontroller.
+              The sensor data is sent to pybytes which in turn sends the data through webhooks to an API built in SpringBoot.
+              The data is stored in influxDB and later fetched from the API to this client. <a href="">Gitlab project</a>
+            </p>
+          </div>
         </b-col>
         <b-col></b-col>
       </b-row>
