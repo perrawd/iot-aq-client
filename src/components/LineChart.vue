@@ -2,14 +2,14 @@
   <div>
     <h4>Current</h4>
     <b-row>
-      <b-col></b-col>
+      <b-col/>
       <b-col>
-        <b-card :title="currentTemp" sub-title="🌡 Temperature"></b-card>
+        <b-card :title="currentTemp" sub-title="🌡 Temperature"/>
       </b-col>
       <b-col>
-        <b-card :title="currentHumidity" sub-title="💧 Humidity"></b-card>
+        <b-card :title="currentHumidity" sub-title="💧 Humidity"/>
       </b-col>
-      <b-col></b-col>
+      <b-col/>
     </b-row>
     <p>Current measurement gathered on: {{currentTime}}</p>
     <hr>
